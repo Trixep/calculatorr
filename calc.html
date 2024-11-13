@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div id="app">
+        <img
+            src="calc-icon.png"
+            id="btn-calc"
+            onclick="openCalc()"
+        >
+        <div id="calc-container">
+            <div id="top-bar">
+                <div id="app-name">Calculator</div>
+                <div id="app-controls">
+                    <button
+                        id="btn-minimize"
+                        class="btn-control"
+                    >🗕</button>
+                    <button
+                        id="btn-mmximize"
+                        class="btn-control"
+                    >🗖</button>
+                    <button
+                        id="btn-close"
+                        class="btn-control"
+                        onclick="closeCalc()"
+                    >✖</button>
+                </div>
+            </div>
+                <div id="operation-display"></div>
+                <div id="display">0</div>
+                <div id="main-btn-grid">
+                    <button id="clear"
+                        class="btn-main btn-operation"
+                        onclick="Reset()">C</button>
+                    <button id="clear-entry btn-operation"
+                        class="btn-main btn-operation"
+                        onclick="ResetAll()">CE</button>
+                    <button id="squared"
+                        class="btn-main btn-operation"
+                        onclick="Pow()">x²</button>
+                    <button id="divide"
+                        class="btn-main btn-operation"
+                        onclick="Devide()">÷</button>
+                    <button id="seven"
+                        class="btn-main btn-number" 
+                        onclick="ButtonNumber(7)">7</button>
+                    <button id="eight"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(8)">8</button>
+                    <button id="nine"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(9)">9</button>
+                    <button id="multiply"
+                        class="btn-main btn-operation"
+                        onclick="Multiply()">×</button>
+                    <button id="four"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(4)">4</button>
+                    <button id="five"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(5)">5</button>
+                    <button id="six"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(6)">6</button>
+                    <button id="subtract"
+                        class="btn-main btn-operation"
+                        onclick="Substract()">-</button>
+                    <button id="one"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(1)">1</button>
+                    <button id="two"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(2)">2</button>
+                    <button id="three"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(3)">3</button>
+                    <button id="add"
+                        class="btn-main btn-operation"
+                        onclick="Add()">+</button>
+                    <button id="sign"
+                        class="btn-main btn-number"
+                        onclick="ChangeShit()">±</button>
+                    <button id="zero"
+                        class="btn-main btn-number"
+                        onclick="ButtonNumber(0)">0</button>
+                    <button id="point"
+                        class="btn-main btn-number"
+                        onclick="Float()">.</button>
+                    <button id="equals"
+                        class="btn-main btn-operation"
+                        onclick="Calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>

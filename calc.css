@@ -1,0 +1,93 @@
+body * {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#btn-calc {
+    width: 3rem;
+
+}
+
+#btn-calc:hover {
+    cursor: pointer;
+    opacity: 70%;
+    transition: 200ms;
+}
+
+#calc-container {
+    max-width: 24rem;
+    margin: auto;
+    border: 1px solid darkcyan;
+    background-color: rgb(50, 50, 50);
+    box-shadow: 0.5rem 0.5rem 0.5rem grey;
+    visibility: hidden;
+}
+
+#top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#app-name {
+    padding: 0.3rem;
+}
+
+.btn-control {
+    border: none;
+    background-color: transparent;
+    margin-right: 0.2rem;
+}
+
+#display {
+    text-align: end;
+    font-size: 3rem;
+    margin: 0.8rem;
+}
+
+#operation-display {
+    text-align: end;
+    color: rgb(150, 150, 150);
+    margin: 1rem;
+}
+
+#main-btn-grid {
+    display: grid;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    grid-template-columns: auto auto auto auto;
+}
+
+.btn-main {
+    height: 4rem;
+    font-size: 1rem;
+    border: none;
+}
+
+.btn-number {
+    background-color: rgb(60, 60, 60);
+}
+
+.btn-operation {
+    background-color: rgb(70, 70, 70);
+}
+
+.btn-control:hover,
+.btn-number:hover,
+.btn-operation:hover {
+    cursor: pointer;
+    background-color: rgb(100, 100, 100);
+}
+
+#btn-close:hover {
+    background-color: red;
+}
+
+#equals {
+    background-color: darkcyan;
+}
+
+#equals:hover {
+    background-color: cyan;
+}
