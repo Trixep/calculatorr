@@ -2,7 +2,7 @@ calculator = document.getElementById('calc-container');
 prevDisplay = document.getElementById('operation-display').innerHTML;
 display = document.getElementById('display').innerHTML;
 var currentNumber = "0";
-var currentCalculate[] = null;
+var currentCalculate = [];
 
 openCalc = () => {
     calculator.style.visibility = 'visible';
@@ -42,7 +42,7 @@ function Multiply(){
 }
 
 function Substract(){
-
+    ChangeCurrentCalculate("-");
 }
 
 function Add(){
@@ -70,5 +70,9 @@ function ChangeCurrentNumber(){
 }
 
 function ChangeCurrentCalculate(action){
-    currentCalculate
+    currentCalculate += currentNumber;
+    currentCalculate += action;
+    currentNumber = "0";
+    document.getElementById('display').innerHTML += action;
+    console.log(currentCalculate);
 }
