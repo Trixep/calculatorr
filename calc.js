@@ -3,6 +3,7 @@ prevDisplay = document.getElementById('operation-display').innerHTML;
 display = document.getElementById('display').innerHTML;
 var currentNumber = "0";
 var currentCalculate = [];
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 openCalc = () => {
     calculator.style.visibility = 'visible';
@@ -21,12 +22,14 @@ function ButtonNumber(number){
 function Reset(){
     currentNumber = "0";
     document.getElementById('display').innerHTML = currentNumber;
+    currentCalculate = [];
 }
 
 function ResetAll(){
-    prevDisplay = "";
     currentNumber = "0";
+    document.getElementById('operation-display').innerHTML = "";
     document.getElementById('display').innerHTML = currentNumber;
+    currentCalculate = [];
 }
 
 function Pow(){
@@ -34,11 +37,11 @@ function Pow(){
 }
 
 function Devide(){
-
+    ChangeCurrentCalculate("/");
 }
 
 function Multiply(){
-
+    ChangeCurrentCalculate("*");
 }
 
 function Substract(){
@@ -46,15 +49,26 @@ function Substract(){
 }
 
 function Add(){
-
+    ChangeCurrentCalculate("+");
 }
 
 function ChangeShit(){
-
+    if (currentCalculate[0] == "-"){
+        arr.shift();
+    }
+    else
 }
 
 function Float(){
-    
+    if (currentNumber.includes(".")){
+        return;
+    }
+    if (currentNumber == ""){
+        return;
+    }
+
+    currentNumber += ".";
+    RefreshDisplay();
 }
 
 function Calculate(){
@@ -63,16 +77,40 @@ function Calculate(){
 
 function ChangeCurrentNumber(){
 
-    if( currentNumber.charAt( 0 ) === '0' )
+    if( currentNumber.charAt( 0 ) === '0' && currentNumber.length == 2 && !currentNumber.includes(".")){
         currentNumber = currentNumber.slice( 1 );
+    }
 
-    document.getElementById('display').innerHTML = currentNumber;
+    RefreshDisplay();
 }
 
 function ChangeCurrentCalculate(action){
-    currentCalculate += currentNumber;
-    currentCalculate += action;
-    currentNumber = "0";
+    if (action == currentCalculate[currentCalculate.length - 1] && currentNumber == "")
+    {
+        return;
+    }
+
+    if (numbers.includes(currentCalculate[currentCalculate.length - 1]) == false && currentNumber == "")
+    {
+        currentCalculate[currentCalculate.length - 1] = action;
+        RefreshDisplay();
+        return;
+    }
+
+    currentCalculate.push(currentNumber, action);
+    currentNumber = "";
     document.getElementById('display').innerHTML += action;
     console.log(currentCalculate);
+    RefreshDisplay();
+}
+
+function RefreshDisplay(){
+    let displayString = "";
+
+    for (let i = 0; i < currentCalculate.length; i++)
+    {
+        displayString += currentCalculate[i];
+    }
+    displayString += currentNumber;
+    document.getElementById('display').innerHTML = displayString;
 }
